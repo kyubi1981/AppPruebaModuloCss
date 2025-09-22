@@ -3,3 +3,37 @@
     padding: 0px;
 }
 
+.container{
+    display: grid;
+    height: 100svh;
+}
+
+
+body{
+    background-color: white;
+}
+
+header{
+    border: 1px solid black;
+    background-color: azure;
+}
+
+nav{
+    border: 1px solid black;
+    background-color: bisque;
+}
+
+aside{
+    border: 1px solid black;
+    background-color: chocolate;
+}
+
+main{
+    border: 1px solid black;
+    background-color: aquamarine;
+}
+
+footer{
+    border: 1px solid black;
+    background-color: rgb(99, 57, 4);
+}
