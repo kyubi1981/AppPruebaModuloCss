@@ -12,33 +12,34 @@ body {
 .container {
     display: grid;
     height: 100svh;
-    grid-template-rows: 1fr 1fr 9fr 1fr;
+    grid-template-rows: 2fr 1fr 8fr 1fr;
     grid-template-areas:
-        "header header header header"
-        "nav nav nav nav"
-        "aside main main main"
-        "aside main main main"
-        "aside footer footer footer";
+        "nav"
+        "header"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
 }
 
 /* Definiendo Grid Areas de etiquetas semanticas */
 
 header {
-    border: 1px solid black;
-    background-color: azure;
+    /*border: 1px solid black;*/
+    background-color: rgb(153, 167, 167);
     grid-area: header;
     padding: 5px;
     color: brown;
 }
 
 nav {
-    border: 1px solid black;
-    background-color: bisque;
+    /*border: 1px solid black;*/
+    background-color: rgb(145, 178, 246);
     grid-area: nav;
     padding: 5px;
     color: coral;
 }
 
+/*
 aside {
     border: 1px solid black;
     background-color: chocolate;
@@ -46,39 +47,237 @@ aside {
     padding: 5px;
     color: white;
 }
+*/
 
 main {
-    border: 1px solid black;
-    background-color: aquamarine;
+    /*border: 1px solid black;*/
+    /*background-color:;*/
+    display: grid;
+    justify-content: center;
+    align-items: center;
     grid-area: main;
     padding: 5px;
     color: black;
+    overflow-y: auto;
 }
 
 footer {
-    border: 1px solid black;
-    background-color: rgb(99, 57, 4);
+    /*border: 1px solid black;*/
+    background-color: rgb(145, 178, 246);
     grid-area: footer;
     padding: 5px;
     color: aliceblue;
 }
 
-.pet-head {
-    background-color: rgb(99, 112, 124);
-    height: 25px;
-    width: 50px;
+/*.logo {
+    border: 1px solid lightgrey;
+    height: 100%;
+    width: 15%;
+}*/
+
+.pet {
+    background-color: rgb(190, 194, 199);
+    height: 20px;
+    width: 28px;
     position: absolute;
-    top: 10px;
-    left: 5%;
-    border-radius: 0 0 0 120px;
+    top: 2%;
+    left: 2%;
+    border-radius: 35px 25px 75px 50px;
 }
 
 .pet-body {
-    background-color: rgb(193, 208, 222);
+    background-color: rgb(148, 156, 163);
     height: 30px;
-    width: 70px;
+    width: 55px;
     position: relative;
-    top: 28px;
-    left: 50px;
-    border-radius: 0 0 0 60px;
+    top: 15px;
+    left: 15px;
+    border-radius: 5px 15px 0 20px;
+    z-index: 1;
+}
+
+.pet-paw1,
+.pet-paw2,
+.pet-paw3,
+.pet-paw4 {
+    background-color: rgb(220, 220, 204);
+    height: 15px;
+    width: 10px;
+    position: relative;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.pet-paw1 {
+    background-color: rgb(244, 242, 242);
+    left: 25px;
+    top: 12px;
+}
+
+.pet-paw2 {
+    background-color: rgb(190, 190, 190);
+    left: 40px;
+    bottom: 4px;
+    transform: rotate(330deg);
+    transform-origin: bottom;
+    z-index: 1;
+}
+
+.pet-paw3 {
+    left: 53px;
+    bottom: 18px;
+    background-color: dimgray;
+}
+
+.pet-paw4 {
+    left: 68px;
+    bottom: 35px;
+    transform: rotate(330deg);
+    transform-origin: bottom;
+    z-index: 1;
+}
+
+.pet-tail {
+    width: 1px;
+    height: 1px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 15px solid rgb(4, 4, 4);
+    position: relative;
+    bottom: 85px;
+    left: 60px;
+    transform: rotate(30deg);
+    transform-origin: bottom;
+    animation: wag 0.5s infinite;
+}
+
+@keyframes wag {
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+.pet-ear {
+    background-color: rgb(244, 242, 242);
+    width: 12px;
+    height: 15px;
+    border-radius: 0 5px 0 5px;
+    position: relative;
+    left: 22px;
+    bottom: 120px;
+    transform: rotate(335deg);
+    transform-origin: bottom;
+    z-index: 1;
+}
+
+.pet-eye {
+    background-color: rgb(0, 0, 0);
+    width: 4px;
+    height: 4px;
+    border-radius: 5px 5px 5px 5px;
+    position: relative;
+    left: 12px;
+    bottom: 104px;
+    z-index: 1;
+    transform: scale(1.5);
+    transform-origin: bottom;
+    animation: eyes 1s infinite;
+}
+
+@keyframes eyes {
+    50% {
+        transform: scale(1);
+    }
+}
+
+.pet-noise {
+    background-color: rgb(0, 0, 0);
+    width: 5px;
+    height: 5px;
+    border-radius: 5px 5px 5px 5px;
+    position: relative;
+    left: -2px;
+    bottom: 110px;
+    z-index: 1;
+}
+
+.pet-tongle {
+    background-color: rgb(226, 0, 0);
+    width: 3px;
+    height: 6px;
+    border-radius: 0px 0px 5px 5px;
+    position: relative;
+    left: 1px;
+    bottom: 118px;
+    transform: rotate(50deg);
+    transform-origin: bottom;
+    z-index: 1;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 250px;
+    width: 100px;
+    height: 100%;
+}
+
+.menu a {
+    text-decoration: none;
+    margin-left: 10px;
+    color: white;
+}
+
+/*******************************************
+*
+*
+********************************************/
+
+
+.gallery {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    width: 100%;
+    margin: 5px;
+}
+
+.cards {
+    /*border: 1px solid black;*/
+    box-shadow: 5px 5px 15px #9c9b9b;
+    margin: 5px;
+}
+
+.cards-img {
+    /*border: 1px solid black;*/
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.cards-body {
+    /*border: 1px solid black;*/
+    text-align: center;
+}
+
+.description {
+    /*border: 1px solid black;*/
+    padding: 5px;
+}
+
+.cards-btn {
+    /*border: 1px solid black;*/
+    padding: 5px;
+    text-align: center;
+}
+
+.btn-details {
+    background-color: #3e7af3;
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+    height: 30px;
+    width: 100px;
 }
