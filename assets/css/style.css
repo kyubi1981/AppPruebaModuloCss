@@ -31,10 +31,10 @@ header {
     color: rgb(83, 67, 67);
     text-align: center;
     align-content: center;
-    font-size: 20px;
+    font-size: 18px;
 }
 
-.title h5{
+.title h5 {
     justify-content: right;
 }
 
@@ -50,16 +50,6 @@ nav {
 .menu a:hover {
     color: grey;
 }
-
-/*
-aside {
-    border: 1px solid black;
-    background-color: chocolate;
-    grid-area: aside;
-    padding: 5px;
-    color: white;
-}
-*/
 
 main {
     /*border: 1px solid black;*/
@@ -229,14 +219,14 @@ footer {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
-    margin-left: 250px;
-    width: 100px;
+    margin-left: 100px;
+    width: 80%;
     height: 100%;
 }
 
 .menu a {
     text-decoration: none;
-    margin-left: 10px;
+    margin-left: 0px;
     color: white;
 }
 
@@ -251,23 +241,23 @@ footer {
     grid-template-columns: 1fr;
     align-content: center;
     width: 100%;
-    margin: 5px;
+    margin: 0%;
 }
 
 .cards {
     /*border: 1px solid black;*/
     box-shadow: 5px 5px 15px #9c9b9b;
-    margin: 15px;
+    margin-top: 10px;
 }
 
 .cards-img {
     /*border: 1px solid black;*/
-    padding: 10px;
+    padding: 5px;
     text-align: center;
 }
 
 .cards-img img {
-    width: 50svh;
+    width: 70svh;
     object-fit: contain;
     transform: scale(0.9);
     /*transform-origin: bottom;*/
@@ -312,7 +302,7 @@ footer {
 
 
 /*      DISPOSITIVOS TABLET -- Pantallas minimas de 576 pixeles       */
-@media (min-width: 576px) {
+@media (min-width: 768px) {
     .container {
         grid-template-rows: 2fr 1fr 7fr 1fr 1fr;
         grid-template-areas:
@@ -322,10 +312,6 @@ footer {
             "main main main"
             "footer footer footer";
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    header{
-
     }
 
     main {
@@ -347,18 +333,26 @@ footer {
         margin: 0px;
     }
 
+    .cards-img img {
+        width: 60svh;
+        object-fit: contain;
+        transform: scale(0.9);
+        /*transform-origin: bottom;*/
+        /*animation: pic 1s infinite;*/
+    }
+
     .menu {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
-        margin-left: 30px;
-        width: 100px;
+        flex-direction: row;
+        margin-left: 95px;
+        width: 60%;
         height: 100%;
     }
 
     .menu a {
-        border: 1px solid white;
+        /*border: 1px solid white;*/
         text-decoration: none;
         color: white;
         padding: 5px;
@@ -371,81 +365,90 @@ footer {
 
 
 /*      DISPOSITIVOS DESKTOP -- Pantallas menos de 992 pixeles      */
-@medi (min-width:) {
-    .wrap-main {
-        grid-template-rows: 1fr 1fr 8fr 1fr 1fr;
+@media (min-width: 992px) {
+    .container {
+        grid-template-rows: 2fr 1fr 2fr 2fr 2fr 1fr;
         grid-template-areas:
-            "nav aside aside"
-            "nav main main"
-            "nav main main"
-            "nav main main"
-            "footer paginador paginador";
-        /*grid-template-columns: 1fr 5fr;*/
+            "header header header header"
+            "nav main main main"
+            "nav main main main"
+            "nav main main main"
+            "nav main main main"
+            "footer footer footer footer";
+        grid-template-columns: auto 5fr
+    }
+
+    h3 {
+        font-size: xx-large;
+    }
+
+    h5 {
+        font-size: larger;
+    }
+
+    .pet {
+        background-color: rgb(190, 194, 199);
+        height: 20px;
+        width: 28px;
+        position: absolute;
+        top: 7%;
+        left: 5%;
+        border-radius: 35px 25px 75px 50px;
     }
 
     main {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .material-symbols-outlined {
-        /*border: 1px solid white;*/
-        align-content: center;
-    }
-
-    .title-menu {
-        /*border: 1px solid black;*/
-        display: flex;
+        /*grid-template-columns: repeat(2, 1fr);*/
+        display: grid;
         justify-content: center;
-        margin-top: 10px;
-    }
-
-    .title-menu h4 {
-        align-content: center;
-        font-size: x-small;
+        align-items: center;
+        grid-area: main;
+        color: black;
+        overflow-y: auto;
     }
 
     .gallery {
         /*border: 1px solid black;*/
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        align-content: center;
+        gap: 15px;
         width: 100%;
-        margin: 5px;
+        margin: 0px;
     }
 
-    .paginador {
-        width: 98%;
-        padding: 20px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .paginas {
-        height: 25px;
+    .cards-img img {
+        width: 50svh;
+        object-fit: contain;
+        transform: scale(0.9);
+        /*transform-origin: bottom;*/
+        /*animation: pic 1s infinite;*/
     }
 
     .menu {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        width: 210px;
+        justify-content: start;
+        align-items: center;
+        margin-left: 0px;
+        width: 100px;
+        height: 100%;
     }
 
-    .title-menu {
-        width: 200px;
+    .menu a {
+        border: 1px solid white;
+        text-decoration: none;
+        color: white;
+        margin-top: 20px;
+        width: 100%;
+        padding: 5px;
     }
 
-    .opciones {
+    footer {
         /*border: 1px solid black;*/
-        display: flex;
-        flex-direction: column;
-        width: 200px;
+        background-color: rgb(236, 217, 130);
+        grid-area: footer;
+        padding: 5px;
+        color: rgb(93, 118, 140);
     }
 
-    .opciones a {
-        justify-content: center;
-        align-content: center;
-        margin-top: 10px;
-        margin-left: 50px;
-        height: 20px;
-    }
 }
